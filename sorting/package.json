@@ -1,0 +1,12 @@
+{
+  "name": "sorting",
+  "version": "1.0.0",
+  "description": "Sorting",
+  "scripts": {
+    "test": "mocha './**/*.test.js'"
+  },
+  "author": "Frederic Paladin",
+  "dependencies": {
+    "mocha": "^10.0.0"
+  }
+}

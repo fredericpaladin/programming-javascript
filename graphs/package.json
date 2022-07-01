@@ -1,0 +1,12 @@
+{
+  "name": "graphs",
+  "version": "1.0.0",
+  "description": "Graphs",
+  "scripts": {
+    "test": "mocha './**/*.test.js'"
+  },
+  "author": "Frederic Paladin",
+  "dependencies": {
+    "mocha": "^10.0.0"
+  }
+}
