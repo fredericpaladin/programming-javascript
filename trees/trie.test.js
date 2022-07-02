@@ -143,4 +143,90 @@ describe('Trie', function () {
             });
         }
     });
+
+    describe('delete() existing word', function () {
+        // Arrange
+        const words = ['apple', 'card', 'car', 'app', 'application'];
+        const trie = new Trie();
+        for (let i = 0; i < words.length; i++)
+            trie.insert(words[i]);
+
+        // Act
+        const deleteWord = 'car';
+        trie.delete(deleteWord);
+
+        // Assert
+        it(`trie should no longer contain the word '${deleteWord}'`, function () {
+            assert.equal(trie.search(deleteWord), false);
+        });
+
+        const deleteWordStartsWith = 'car'; // This should work with 'card'
+        it(`trie should still contain a word that starts with '${deleteWordStartsWith}'`, function () {
+            assert.equal(trie.startsWith(deleteWordStartsWith), true);
+        });
+
+        const remainingWords = ['apple', 'card', 'app', 'application'];
+        for (let i = 0; i < remainingWords.length; i++) {
+            it(`trie should still contain the word '${remainingWords[i]}'`, function () {
+                assert.equal(trie.search(remainingWords[i]), true);
+            });
+        }
+    });
+
+    describe('delete() existing word with no similar words', function () {
+        // Arrange
+        const words = ['apple', 'car', 'app', 'application'];
+        const trie = new Trie();
+        for (let i = 0; i < words.length; i++)
+            trie.insert(words[i]);
+
+        // Act
+        const deleteWord = 'car';
+        trie.delete(deleteWord);
+
+        // Assert
+        it(`trie should no longer contain the word '${deleteWord}'`, function () {
+            assert.equal(trie.search(deleteWord), false);
+        });
+
+        const deleteWordStartsWith = 'c';
+        it(`trie should no longer contain a word that starts with '${deleteWordStartsWith}'`, function () {
+            assert.equal(trie.startsWith(deleteWordStartsWith), false);
+        });
+
+        const remainingWords = ['apple', 'app', 'application'];
+        for (let i = 0; i < remainingWords.length; i++) {
+            it(`trie should still contain the word '${remainingWords[i]}'`, function () {
+                assert.equal(trie.search(remainingWords[i]), true);
+            });
+        }
+    });
+
+    describe('delete() non existing word', function () {
+        // Arrange
+        const words = ['apple', 'card', 'car', 'application'];
+        const trie = new Trie();
+        for (let i = 0; i < words.length; i++)
+            trie.insert(words[i]);
+
+        // Act
+        const deleteWord = 'app';
+        trie.delete(deleteWord);
+
+        // Assert
+        it(`trie should not contain the word '${deleteWord}'`, function () {
+            assert.equal(trie.search(deleteWord), false);
+        });
+
+        const deleteWordStartsWith = 'app'; // This should work with 'apple' and'application'
+        it(`trie should still contain a word that starts with '${deleteWordStartsWith}'`, function () {
+            assert.equal(trie.startsWith(deleteWordStartsWith), true);
+        });
+
+        for (let i = 0; i < words.length; i++) {
+            it(`trie should still contain the word '${words[i]}'`, function () {
+                assert.equal(trie.search(words[i]), true);
+            });
+        }
+    });
 });
