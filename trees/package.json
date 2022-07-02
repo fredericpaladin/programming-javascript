@@ -2,8 +2,10 @@
   "name": "trees",
   "version": "1.0.0",
   "description": "Trees",
+  "main": "app.js",
   "scripts": {
-    "test": "mocha './**/*.test.js'"
+    "test": "mocha './**/*.test.js'",
+    "test-trie": "mocha './trie.test.js'"
   },
   "author": "Frederic Paladin",
   "dependencies": {
