@@ -8,6 +8,10 @@ class Trie {
         this.root = new TrieNode(null);
     }
 
+    /**
+     * Add a word to the tree.
+     * @param {*} word 
+     */
     insert(word) {
 
         let current = this.root;
@@ -22,9 +26,13 @@ class Trie {
         }
 
         // Flat the end of the word
-        current.isLeaf = true;
+        current.endOfWord = true;
     }
 
+    /**
+     * Search a complete word and return true if it exists.
+     * @param {*} word 
+     */
     search(word) {
 
         let current = this.root;
@@ -38,9 +46,13 @@ class Trie {
             current = current.get(char);
         }
 
-        return current.isLeaf === true;
+        return current.endOfWord === true;
     }
 
+    /**
+     * Search a prefix of a word and return true if it exists.
+     * @param {*} word 
+     */
     startsWith(word) {
 
         let current = this.root;
@@ -62,23 +74,41 @@ class TrieNode {
     constructor(value) {
         this.value = value; // This is not really needed
         this.children = {};
-        this.isLeaf = false;
+        this.endOfWord = false;
     }
 
+    /**
+     * Add a node (character) to the trie.
+     * @param {*} char 
+     */
     add(char) {
         this.children[char] = new TrieNode(char);
     }
 
+    /**
+     * Return true if the current node contains the character in its children.
+     * @param {*} char 
+     * @returns 
+     */
     contains(char) {
         return this.children[char] !== undefined;
     }
 
+    /**
+     * Return the children node for the given character.
+     * @param {*} char 
+     * @returns 
+     */
     get(char) {
         return this.children[char];
     }
 
+    /**
+     * Return true if the current node has one or more children.
+     * @returns 
+     */
     hasChildren() {
-
+        return Object.keys(this.children).length > 0;
     }
 }
 

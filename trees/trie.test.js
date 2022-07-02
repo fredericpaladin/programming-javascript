@@ -38,7 +38,7 @@ describe('Trie', function () {
             });
         }
 
-        const nonExistingWords = ['ape', 'car', 'applicant'];
+        const nonExistingWords = ['ape', 'car', 'cat', 'applicant'];
         for (let i = 0; i < nonExistingWords.length; i++) {
             it(`trie should not contain the word '${nonExistingWords[i]}'`, function () {
                 assert.equal(trie.search(nonExistingWords[i]), false);
@@ -62,7 +62,7 @@ describe('Trie', function () {
             });
         }
 
-        const nonExistingWords = ['ape', 'car', 'applicant'];
+        const nonExistingWords = ['ape', 'car', 'cat', 'applicant'];
         for (let i = 0; i < nonExistingWords.length; i++) {
             it(`trie should not contain the word '${nonExistingWords[i]}'`, function () {
                 assert.equal(trie.search(nonExistingWords[i]), false);
@@ -90,7 +90,7 @@ describe('Trie', function () {
             });
         }
 
-        const nonExistingPrefixes = ['applicant', 'ape', 'test'];
+        const nonExistingPrefixes = ['applicant', 'ape', 'cat', 'test'];
         for (let i = 0; i < nonExistingPrefixes.length; i++) {
             const prefix = nonExistingPrefixes[i];
 
@@ -100,6 +100,46 @@ describe('Trie', function () {
             // Assert
             it(`trie should has a word that starts with '${prefix}'`, function () {
                 assert.equal(actual, false);
+            });
+        }
+    });
+
+    describe('hasChildren()', function () {
+        // Arrange
+        const words = ['ape', 'bee', 'cat'];
+        const trie = new Trie();
+        for (let i = 0; i < words.length; i++)
+            trie.insert(words[i]);
+
+        // Assert
+        it('the first node of the trie should have children', function () {
+            assert.equal(trie.root.hasChildren(), true);
+        });
+
+        for (const key of Object.keys(trie.root.children)) {
+            const child = trie.root.children[key];
+            it(`child node '${key}' should have children`, function () {
+                assert.equal(child.hasChildren(), true);
+            });
+        }
+    });
+
+    describe('hasChildren() one level', function () {
+        // Arrange
+        const words = ['a', 'b', 'c'];
+        const trie = new Trie();
+        for (let i = 0; i < words.length; i++)
+            trie.insert(words[i]);
+
+        // Assert
+        it('the first node of the trie should have children', function () {
+            assert.equal(trie.root.hasChildren(), true);
+        });
+
+        for (const key of Object.keys(trie.root.children)) {
+            const child = trie.root.children[key];
+            it(`child node '${key}' should not have children`, function () {
+                assert.equal(child.hasChildren(), false);
             });
         }
     });
