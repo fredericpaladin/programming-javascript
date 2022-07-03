@@ -2,154 +2,207 @@ const assert = require('assert');
 const DepthFirstSearch = require('./depth-first-search');
 
 describe('DepthFirstSearch', function () {
-
     describe('findPathIteratively() open', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': [],
-            'f': []
-        };
+        describe('open graph', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': [],
+                'f': []
+            };
 
-        const dfs = new DepthFirstSearch(adjacencyList);
+            const dfs = new DepthFirstSearch(adjacencyList);
 
-        // Act
-        const startingNode = 'a';
-        const actual = dfs.findPathIteratively(startingNode);
+            // Act
+            const startingNode = 'a';
+            const actual = dfs.findPathIteratively(startingNode);
 
-        // Assert
-        const expected = 'acebdf';
+            // Assert
+            const expected = 'acebdf';
 
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
+        });
+
+        describe('closed loop graph', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': ['b'],
+                'f': []
+            };
+
+            const dfs = new DepthFirstSearch(adjacencyList);
+
+            // Act
+            const startingNode = 'a';
+            const actual = dfs.findPathIteratively(startingNode);
+
+            // Assert
+            const expected = 'acebdf';
+
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
+        });
+
+        describe('last node', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': ['b'],
+                'f': []
+            };
+
+            const dfs = new DepthFirstSearch(adjacencyList);
+
+            // Act
+            const startingNode = 'f';
+            const actual = dfs.findPathIteratively(startingNode);
+
+            // Assert
+            const expected = 'f';
+
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
+        });
+
+        describe('non-existing node', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': [],
+                'f': []
+            };
+
+            const dfs = new DepthFirstSearch(adjacencyList);
+
+            // Act
+            const startingNode = 'x';
+            const actual = dfs.findPathIteratively(startingNode);
+
+            // Assert
+            const expected = '';
+
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
         });
     });
 
-    describe('findPathIteratively() closed loop', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': ['b'],
-            'f': []
-        };
+    describe('findPathRecursevely()', function () {
+        describe('open graph', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': [],
+                'f': []
+            };
 
-        const dfs = new DepthFirstSearch(adjacencyList);
+            const dfs = new DepthFirstSearch(adjacencyList);
 
-        // Act
-        const startingNode = 'a';
-        const actual = dfs.findPathIteratively(startingNode);
+            // Act
+            const startingNode = 'a';
+            const actual = dfs.findPathRecursevely(startingNode);
 
-        // Assert
-        const expected = 'acebdf';
+            // Assert
+            const expected = 'abdfce';
 
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
         });
-    });
 
-    describe('findPathIteratively() end node', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': ['b'],
-            'f': []
-        };
+        describe('closed loop graph', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': ['b'],
+                'f': []
+            };
 
-        const dfs = new DepthFirstSearch(adjacencyList);
+            const dfs = new DepthFirstSearch(adjacencyList);
 
-        // Act
-        const startingNode = 'f';
-        const actual = dfs.findPathIteratively(startingNode);
+            // Act
+            const startingNode = 'a';
+            const actual = dfs.findPathRecursevely(startingNode);
 
-        // Assert
-        const expected = 'f';
+            // Assert
+            const expected = 'abdfce';
 
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
         });
-    });
 
-    describe('findPathRecursevely() open', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': [],
-            'f': []
-        };
+        describe('last node', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': ['b'],
+                'f': []
+            };
 
-        const dfs = new DepthFirstSearch(adjacencyList);
+            const dfs = new DepthFirstSearch(adjacencyList);
 
-        // Act
-        const startingNode = 'd';
-        const actual = dfs.findPathRecursevely(startingNode);
+            // Act
+            const startingNode = 'f';
+            const actual = dfs.findPathRecursevely(startingNode);
 
-        // Assert
-        const expected = 'abdfce';
+            // Assert
+            const expected = 'f';
 
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
         });
-    });
 
-    describe('findPathRecursevely() closed loop', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': ['b'],
-            'f': []
-        };
+        describe('non-existing node', function () {
+            // Arrange
+            const adjacencyList = {
+                'a': ['b', 'c'],
+                'b': ['d'],
+                'c': ['e'],
+                'd': ['f'],
+                'e': [],
+                'f': []
+            };
 
-        const dfs = new DepthFirstSearch(adjacencyList);
+            const dfs = new DepthFirstSearch(adjacencyList);
 
-        // Act
-        const startingNode = 'a';
-        const actual = dfs.findPathRecursevely(startingNode);
+            // Act
+            const startingNode = 'x';
+            const actual = dfs.findPathRecursevely(startingNode);
 
-        // Assert
-        const expected = 'abdfce';
+            // Assert
+            const expected = '';
 
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
-        });
-    });
-
-    describe('findPathRecursevely() end the path', function () {
-        // Arrange
-        const adjacencyList = {
-            'a': ['b', 'c'],
-            'b': ['d'],
-            'c': ['e'],
-            'd': ['f'],
-            'e': ['b'],
-            'f': []
-        };
-
-        const dfs = new DepthFirstSearch(adjacencyList);
-
-        // Act
-        const startingNode = 'f';
-        const actual = dfs.findPathRecursevely(startingNode);
-
-        // Assert
-        const expected = 'f';
-
-        it(`The path using starting at '${startingNode}' should be '${expected}'`, function () {
-            assert.equal(actual, expected);
+            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(actual, expected);
+            });
         });
     });
 });

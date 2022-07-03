@@ -38,7 +38,7 @@ class DepthFirstSearch {
         const visitedNodes = {}
         while (stack.length > 0) {
             const current = stack.pop();
-            if (visitedNodes[current])
+            if (visitedNodes[current] || !this.adjacencyList[current])
                 continue;
 
             visitedNodes[current] = true;
@@ -59,7 +59,7 @@ class DepthFirstSearch {
      * @returns 
      */
     findPathRecursevely(node, visitedNodes = {}) {
-        if (visitedNodes[node])
+        if (visitedNodes[node] || !this.adjacencyList[node])
             return '';
 
         visitedNodes[node] = true;
