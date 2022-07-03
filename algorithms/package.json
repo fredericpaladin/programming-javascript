@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Algorithms",
   "scripts": {
-    "test": "mocha './**/*.test.js'"
+    "test": "mocha './**/*.test.js'",
+    "test-breadth-first-search": "mocha './breadth-first-search.test.js'",
+    "test-depth-first-search": "mocha './depth-first-search.test.js'",
+    "test-fibonacci": "mocha './fibonacci.test.js'"
   },
   "author": "Frederic Paladin",
   "dependencies": {
