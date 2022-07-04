@@ -2,7 +2,7 @@ const assert = require('assert');
 const DepthFirstSearch = require('./depth-first-search');
 
 describe('DepthFirstSearch', function () {
-    describe('findPathIteratively() open', function () {
+    describe('findPath()', function () {
         describe('open graph', function () {
             // Arrange
             const adjacencyList = {
@@ -18,7 +18,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPathIteratively(startingNode);
+            const actual = dfs.findPath(startingNode);
 
             // Assert
             const expected = 'acebdf';
@@ -43,7 +43,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPathIteratively(startingNode);
+            const actual = dfs.findPath(startingNode);
 
             // Assert
             const expected = 'acebdf';
@@ -68,7 +68,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'f';
-            const actual = dfs.findPathIteratively(startingNode);
+            const actual = dfs.findPath(startingNode);
 
             // Assert
             const expected = 'f';
@@ -93,7 +93,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'x';
-            const actual = dfs.findPathIteratively(startingNode);
+            const actual = dfs.findPath(startingNode);
 
             // Assert
             const expected = '';

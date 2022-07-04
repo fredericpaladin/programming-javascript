@@ -13,12 +13,12 @@
  */
 
 /**
- * Depth First Search.
- * Find the path between 2 nodes by exploring the branches first.
+ * Breadth First Search.
+ * Find the path between 2 nodes by exploring the neighbors first.
  * 
- * Stack
+ * Queue
  */
-class DepthFirstSearch {
+class BreadthFirstSearch {
     constructor(adjacencyList) {
 
         // 2 ways of representing a graph: adjacency list or actual objects
@@ -26,20 +26,19 @@ class DepthFirstSearch {
         this.graph = new Graph(adjacencyList);
     }
 
+    
     /**
-     * Returns the DFS path (iteratively) using stack.
-     * Note: due to the nature of this algorithm, whih uses a stack,
-     * it is possible to implement it recursevely (see below).
+     * Returns the BDFS path iteratively using queue.
      * @param {*} node 
      * @returns 
      */
-    findPath(node) {
+     findPath(node) {
 
         let path = "";
-        const stack = [node];
+        const queue = [node];
         const visitedNodes = {}
-        while (stack.length > 0) {
-            const current = stack.pop();
+        while (queue.length > 0) {
+            const current = queue.shift(); // Remove the first element
             if (visitedNodes[current] || !this.adjacencyList[current])
                 continue;
 
@@ -47,27 +46,8 @@ class DepthFirstSearch {
             path += current;
 
             for (let neighbor of this.adjacencyList[current]) {
-                stack.push(neighbor);
+                queue.push(neighbor);
             }
-        }
-
-        return path;
-    }
-
-    /**
-     * Returns the DFS path recursevely.
-     * @param {*} node 
-     * @param {*} visitedNodes 
-     * @returns 
-     */
-    findPathRecursevely(node, visitedNodes = {}) {
-        if (visitedNodes[node] || !this.adjacencyList[node])
-            return '';
-
-        visitedNodes[node] = true;
-        let path = node;
-        for (let neighbor of this.adjacencyList[node]) {
-            path += this.findPathRecursevely(neighbor, visitedNodes);
         }
 
         return path;
@@ -77,7 +57,7 @@ class DepthFirstSearch {
 /**
  * Represent a graph
  */
-class Graph {
+ class Graph {
     constructor(adjacencyList) {
 
         /**
@@ -108,4 +88,4 @@ class Node {
     }
 }
 
-module.exports = DepthFirstSearch;
+module.exports = BreadthFirstSearch;
