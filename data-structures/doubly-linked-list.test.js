@@ -1,11 +1,11 @@
 const assert = require('assert');
-const DoubleLinkedList = require('./double-linked-list');
+const DoublyLinkedList = require('./doubly-linked-list');
 
-describe('DoubleLinkedList', function () {
+describe('DoublyLinkedList', function () {
 
     describe('append()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
@@ -35,7 +35,7 @@ describe('DoubleLinkedList', function () {
 
     describe('prepend()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
@@ -65,7 +65,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeFirst()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -101,7 +101,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeFirst() with empty list', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         const removed = list.removeFirst();
@@ -132,7 +132,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeLast()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -168,7 +168,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeLast() with empty list', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         const removed = list.removeLast();
@@ -199,7 +199,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeAll()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -228,7 +228,7 @@ describe('DoubleLinkedList', function () {
 
     describe('removeAll() with empty list', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         list.removeAll();
@@ -255,7 +255,7 @@ describe('DoubleLinkedList', function () {
     
     describe('toArray()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
@@ -281,7 +281,7 @@ describe('DoubleLinkedList', function () {
     
     describe('toReverseArray()', function () {
         // Arrange
-        const list = new DoubleLinkedList();
+        const list = new DoublyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)

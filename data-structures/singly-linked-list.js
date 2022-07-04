@@ -1,7 +1,7 @@
 /**
  * Signle-Linked List Data Structure.
  */
-class SingleLinkedList {
+class SinglyLinkedList {
     constructor() {
         this.head = null;
     }
@@ -11,7 +11,7 @@ class SingleLinkedList {
      * @param {*} value 
      */
     append(value) {
-        const newNode = new SingleLinkedListNode(value);
+        const newNode = new SinglyLinkedListNode(value);
 
         if (this.head == null) {
             this.head = newNode;
@@ -29,7 +29,7 @@ class SingleLinkedList {
      * @param {*} value 
      */
     prepend(value) {
-        const newNode = new SingleLinkedListNode(value);
+        const newNode = new SinglyLinkedListNode(value);
 
         if (this.head == null) {
             this.head = newNode;
@@ -97,11 +97,11 @@ class SingleLinkedList {
     }
 }
 
-class SingleLinkedListNode {
+class SinglyLinkedListNode {
     constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
 
-module.exports = SingleLinkedList;
+module.exports = SinglyLinkedList;

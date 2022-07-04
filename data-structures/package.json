@@ -4,10 +4,10 @@
   "description": "Data Structures",
   "scripts": {
     "test": "mocha './**/*.test.js'",
-    "test-double-linked-list": "mocha './double-linked-list.test.js'",
+    "test-doubly-linked-list": "mocha './doubly-linked-list.test.js'",
     "test-hash-table": "mocha './hash-table.test.js'",
     "test-queue": "mocha './queue.test.js'",
-    "test-single-linked-list": "mocha './single-linked-list.test.js'",
+    "test-singly-linked-list": "mocha './singly-linked-list.test.js'",
     "test-stack": "mocha './stack.test.js'"
   },
   "author": "Frederic Paladin",

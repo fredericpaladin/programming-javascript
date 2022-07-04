@@ -1,7 +1,7 @@
 /**
- * Double-Linked List Data Structure.
+ * Doubly-Linked List Data Structure.
  */
-class DoubleLinkedList {
+class DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -12,7 +12,7 @@ class DoubleLinkedList {
      * @param {*} value 
      */
     append(value) {
-        const newNode = new DoubleLinkedListNode(value);
+        const newNode = new DoublyLinkedListNode(value);
         if (this.head == null) {
             this.head = newNode;
             this.tail = newNode;
@@ -28,7 +28,7 @@ class DoubleLinkedList {
      * @param {*} value 
      */
     prepend(value) {
-        const newNode = new DoubleLinkedListNode(value);
+        const newNode = new DoublyLinkedListNode(value);
         if (this.head == null) {
             this.head = newNode;
             this.tail = newNode;
@@ -110,7 +110,7 @@ class DoubleLinkedList {
     }
 }
 
-class DoubleLinkedListNode {
+class DoublyLinkedListNode {
     constructor(value) {
         this.value = value;
         this.prev = null;
@@ -118,4 +118,4 @@ class DoubleLinkedListNode {
     }
 }
 
-module.exports = DoubleLinkedList;
+module.exports = DoublyLinkedList;

@@ -1,11 +1,11 @@
 const assert = require('assert');
-const SingleLinkedList = require('./single-linked-list');
+const SinglyLinkedList = require('./singly-linked-list');
 
-describe('SingleLinkedList', function () {
+describe('SinglyLinkedList', function () {
 
     describe('append()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
@@ -30,7 +30,7 @@ describe('SingleLinkedList', function () {
 
     describe('prepend()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
@@ -55,7 +55,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeFirst()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -86,7 +86,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeFirst() with empty list', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         const removed = list.removeFirst();
@@ -113,7 +113,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeLast()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -144,7 +144,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeLast() with empty list', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         const removed = list.removeLast();
@@ -171,7 +171,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeAll()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
         for (let i = 0; i < 10; i++)
             list.append(i);
 
@@ -196,7 +196,7 @@ describe('SingleLinkedList', function () {
 
     describe('removeAll() with empty list', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         list.removeAll();
@@ -219,7 +219,7 @@ describe('SingleLinkedList', function () {
 
     describe('toArray()', function () {
         // Arrange
-        const list = new SingleLinkedList();
+        const list = new SinglyLinkedList();
 
         // Act
         for (let i = 0; i < 10; i++)
