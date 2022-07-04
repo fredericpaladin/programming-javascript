@@ -2,7 +2,7 @@ const assert = require('assert');
 const BreadthFirstSearch = require('./breadth-first-search');
 
 describe('BreadthFirstSearch', function () {
-    describe('findPath()', function () {
+    describe('getNodes()', function () {
         describe('open graph', function () {
             // Arrange
             const adjacencyList = {
@@ -18,7 +18,7 @@ describe('BreadthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = bfs.findPath(startingNode);
+            const actual = bfs.getNodes(startingNode);
 
             // Assert
             const expected = 'abcdef';
@@ -43,7 +43,7 @@ describe('BreadthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = bfs.findPath(startingNode);
+            const actual = bfs.getNodes(startingNode);
 
             // Assert
             const expected = 'abcdef';
@@ -68,7 +68,7 @@ describe('BreadthFirstSearch', function () {
 
             // Act
             const startingNode = 'f';
-            const actual = bfs.findPath(startingNode);
+            const actual = bfs.getNodes(startingNode);
 
             // Assert
             const expected = 'f';
@@ -93,7 +93,7 @@ describe('BreadthFirstSearch', function () {
 
             // Act
             const startingNode = 'x';
-            const actual = bfs.findPath(startingNode);
+            const actual = bfs.getNodes(startingNode);
 
             // Assert
             const expected = '';

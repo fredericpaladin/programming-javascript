@@ -2,7 +2,7 @@ const assert = require('assert');
 const DepthFirstSearch = require('./depth-first-search');
 
 describe('DepthFirstSearch', function () {
-    describe('findPath()', function () {
+    describe('getNodes()', function () {
         describe('open graph', function () {
             // Arrange
             const adjacencyList = {
@@ -18,7 +18,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPath(startingNode);
+            const actual = dfs.getNodes(startingNode);
 
             // Assert
             const expected = 'acebdf';
@@ -43,7 +43,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPath(startingNode);
+            const actual = dfs.getNodes(startingNode);
 
             // Assert
             const expected = 'acebdf';
@@ -68,7 +68,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'f';
-            const actual = dfs.findPath(startingNode);
+            const actual = dfs.getNodes(startingNode);
 
             // Assert
             const expected = 'f';
@@ -93,7 +93,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'x';
-            const actual = dfs.findPath(startingNode);
+            const actual = dfs.getNodes(startingNode);
 
             // Assert
             const expected = '';
@@ -104,7 +104,7 @@ describe('DepthFirstSearch', function () {
         });
     });
 
-    describe('findPathRecursevely()', function () {
+    describe('getNodesRecursevely()', function () {
         describe('open graph', function () {
             // Arrange
             const adjacencyList = {
@@ -120,7 +120,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPathRecursevely(startingNode);
+            const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
             const expected = 'abdfce';
@@ -145,7 +145,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'a';
-            const actual = dfs.findPathRecursevely(startingNode);
+            const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
             const expected = 'abdfce';
@@ -170,7 +170,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'f';
-            const actual = dfs.findPathRecursevely(startingNode);
+            const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
             const expected = 'f';
@@ -195,7 +195,7 @@ describe('DepthFirstSearch', function () {
 
             // Act
             const startingNode = 'x';
-            const actual = dfs.findPathRecursevely(startingNode);
+            const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
             const expected = '';

@@ -28,11 +28,11 @@ class BreadthFirstSearch {
 
     
     /**
-     * Returns the BDFS path iteratively using queue.
+     * Returns the nodes using BFS with a queue.
      * @param {*} node 
      * @returns 
      */
-     findPath(node) {
+     getNodes(node) {
 
         let path = "";
         const queue = [node];
@@ -55,7 +55,7 @@ class BreadthFirstSearch {
 }
 
 /**
- * Represent a graph
+ * Represent a graph.
  */
  class Graph {
     constructor(adjacencyList) {

@@ -27,13 +27,13 @@ class DepthFirstSearch {
     }
 
     /**
-     * Returns the DFS path (iteratively) using stack.
+     * Returns the nodes using DFS (iteratively) with a stack.
      * Note: due to the nature of this algorithm, whih uses a stack,
      * it is possible to implement it recursevely (see below).
      * @param {*} node 
      * @returns 
      */
-    findPath(node) {
+    getNodes(node) {
 
         let path = "";
         const stack = [node];
@@ -55,19 +55,19 @@ class DepthFirstSearch {
     }
 
     /**
-     * Returns the DFS path recursevely.
+     * Returns the nodes using DFS (recursively) with a stack.
      * @param {*} node 
      * @param {*} visitedNodes 
      * @returns 
      */
-    findPathRecursevely(node, visitedNodes = {}) {
+    getNodesRecursevely(node, visitedNodes = {}) {
         if (visitedNodes[node] || !this.adjacencyList[node])
             return '';
 
         visitedNodes[node] = true;
         let path = node;
         for (let neighbor of this.adjacencyList[node]) {
-            path += this.findPathRecursevely(neighbor, visitedNodes);
+            path += this.getNodesRecursevely(neighbor, visitedNodes);
         }
 
         return path;
