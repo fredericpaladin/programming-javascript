@@ -1,6 +1,6 @@
 const assert = require('assert');
 const ReverseLinkedList = require('./reverse-linked-list');
-const ListNode = require('./list-node');
+const ListNode = require('./structures/list-node');
 
 describe('ReverseLinkedList', function () {
 

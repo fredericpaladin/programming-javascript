@@ -1,6 +1,6 @@
 const assert = require('assert');
 const PalindromeLinkedList = require('./palindrome-linked-list');
-const ListNode = require('./list-node');
+const ListNode = require('./structures/list-node');
 
 describe('PalindromeLinkedList', function () {
 
