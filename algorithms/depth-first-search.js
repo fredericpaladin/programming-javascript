@@ -19,11 +19,13 @@
  * Stack
  */
 class DepthFirstSearch {
-    constructor(adjacencyList) {
 
-        // 2 ways of representing a graph: adjacency list or actual objects
+    /**
+     * Constructor.
+     * @param {*} adjacencyList 
+     */
+    constructor(adjacencyList) {
         this.adjacencyList = adjacencyList;
-        this.graph = new Graph(adjacencyList);
     }
 
     /**
@@ -31,20 +33,21 @@ class DepthFirstSearch {
      * Note: due to the nature of this algorithm, whih uses a stack,
      * it is possible to implement it recursevely (see below).
      * @param {*} node 
-     * @returns 
+     * @returns {Array}
      */
     getNodes(node) {
 
-        let path = "";
+        const path = [];
         const stack = [node];
         const visitedNodes = {}
         while (stack.length > 0) {
             const current = stack.pop();
-            if (visitedNodes[current] || !this.adjacencyList[current])
+            if (visitedNodes[current] || !this.adjacencyList[current]) {
                 continue;
+            }
 
             visitedNodes[current] = true;
-            path += current;
+            path.push(current);
 
             for (let neighbor of this.adjacencyList[current]) {
                 stack.push(neighbor);
@@ -58,53 +61,20 @@ class DepthFirstSearch {
      * Returns the nodes using DFS (recursively) with a stack.
      * @param {*} node 
      * @param {*} visitedNodes 
-     * @returns 
+     * @returns {Array}
      */
     getNodesRecursevely(node, visitedNodes = {}) {
-        if (visitedNodes[node] || !this.adjacencyList[node])
-            return '';
-
-        visitedNodes[node] = true;
-        let path = node;
-        for (let neighbor of this.adjacencyList[node]) {
-            path += this.getNodesRecursevely(neighbor, visitedNodes);
+        if (visitedNodes[node] || !this.adjacencyList[node]) {
+            return [];
         }
 
-        return path;
-    }
-}
+        visitedNodes[node] = true;
+        let nodes = [node];
+        for (let neighbor of this.adjacencyList[node]) {
+            nodes = nodes.concat(this.getNodesRecursevely(neighbor, visitedNodes));
+        }
 
-/**
- * Represent a graph
- */
-class Graph {
-    constructor(adjacencyList) {
-
-        /**
-         * Nodes are vertices that correspond to objects.
-         */
-        this.nodes = [];
-
-        for (const [value, edges] of Object.entries(adjacencyList))
-            this.nodes.push(new Node(value, edges));
-    }
-}
-
-/**
- * Represent a node.
- */
-class Node {
-    constructor(value, edges) {
-
-        /**
-         * The value of the node.
-         */
-        this.value = value;
-
-        /**
-         * Edges are the connections between objects.
-         */
-        this.edges = edges;
+        return nodes;
     }
 }
 

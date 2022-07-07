@@ -21,10 +21,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'acebdf';
+            const expected = ['a', 'c', 'e', 'b', 'd', 'f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -46,10 +46,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'acebdf';
+            const expected = ['a', 'c', 'e', 'b', 'd', 'f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -71,10 +71,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'f';
+            const expected = ['f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -96,10 +96,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodes(startingNode);
 
             // Assert
-            const expected = '';
+            const expected = [];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
     });
@@ -123,10 +123,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
-            const expected = 'abdfce';
+            const expected = ['a', 'b', 'd', 'f', 'c', 'e'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -148,10 +148,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
-            const expected = 'abdfce';
+            const expected = ['a', 'b', 'd', 'f', 'c', 'e'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -173,10 +173,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
-            const expected = 'f';
+            const expected = ['f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -198,10 +198,10 @@ describe('DepthFirstSearch', function () {
             const actual = dfs.getNodesRecursevely(startingNode);
 
             // Assert
-            const expected = '';
+            const expected = [];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
     });

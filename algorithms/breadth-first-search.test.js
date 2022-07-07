@@ -21,10 +21,10 @@ describe('BreadthFirstSearch', function () {
             const actual = bfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'abcdef';
+            const expected = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -46,10 +46,10 @@ describe('BreadthFirstSearch', function () {
             const actual = bfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'abcdef';
+            const expected = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -71,10 +71,10 @@ describe('BreadthFirstSearch', function () {
             const actual = bfs.getNodes(startingNode);
 
             // Assert
-            const expected = 'f';
+            const expected = ['f'];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
 
@@ -96,10 +96,10 @@ describe('BreadthFirstSearch', function () {
             const actual = bfs.getNodes(startingNode);
 
             // Assert
-            const expected = '';
+            const expected = [];
 
-            it(`The path starting at node '${startingNode}' should be '${expected}'`, function () {
-                assert.equal(actual, expected);
+            it(`The node list starting from '${startingNode}' should be '${expected}'`, function () {
+                assert.equal(JSON.stringify(actual), JSON.stringify(expected));
             });
         });
     });

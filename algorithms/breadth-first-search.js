@@ -19,72 +19,40 @@
  * Queue
  */
 class BreadthFirstSearch {
-    constructor(adjacencyList) {
 
-        // 2 ways of representing a graph: adjacency list or actual objects
+    /**
+     * Constructor.
+     * @param {*} adjacencyList 
+     */
+    constructor(adjacencyList) {
         this.adjacencyList = adjacencyList;
-        this.graph = new Graph(adjacencyList);
     }
 
-    
     /**
      * Returns the nodes using BFS with a queue.
      * @param {*} node 
-     * @returns 
+     * @returns {Array}
      */
-     getNodes(node) {
+    getNodes(node) {
 
-        let path = "";
+        const nodes = [];
         const queue = [node];
         const visitedNodes = {}
         while (queue.length > 0) {
             const current = queue.shift(); // Remove the first element
-            if (visitedNodes[current] || !this.adjacencyList[current])
+            if (visitedNodes[current] || !this.adjacencyList[current]) {
                 continue;
+            }
 
             visitedNodes[current] = true;
-            path += current;
+            nodes.push(current);
 
             for (let neighbor of this.adjacencyList[current]) {
                 queue.push(neighbor);
             }
         }
 
-        return path;
-    }
-}
-
-/**
- * Represent a graph.
- */
- class Graph {
-    constructor(adjacencyList) {
-
-        /**
-         * Nodes are vertices that correspond to objects.
-         */
-        this.nodes = [];
-
-        for (const [value, edges] of Object.entries(adjacencyList))
-            this.nodes.push(new Node(value, edges));
-    }
-}
-
-/**
- * Represent a node.
- */
-class Node {
-    constructor(value, edges) {
-
-        /**
-         * The value of the node.
-         */
-        this.value = value;
-
-        /**
-         * Edges are the connections between objects.
-         */
-        this.edges = edges;
+        return nodes;
     }
 }
 
