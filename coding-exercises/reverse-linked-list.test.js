@@ -5,15 +5,15 @@ const ListNode = require('./structures/list-node');
 describe('ReverseLinkedList', function () {
 
     const inputs = [
-        [1,2,3,4,5],
+        [1, 2, 3, 4, 5],
         [1],
-        [1,2],
+        [1, 2],
         []
     ];
     const outputs = [
-        [5,4,3,2,1],
+        [5, 4, 3, 2, 1],
         [1],
-        [2,1],
+        [2, 1],
         []
     ];
 

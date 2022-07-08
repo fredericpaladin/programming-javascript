@@ -4,14 +4,14 @@ const TwoSum = require('./two-sum');
 describe('TwoSum', function () {
 
     const inputs = [
-        [[2,7,11,15], 9],
-        [[3,2,4], 6],
-        [[3,3], 6]
+        [[2, 7, 11, 15], 9],
+        [[3, 2, 4], 6],
+        [[3, 3], 6]
     ];
     const outputs = [
-        [0,1],
-        [1,2],
-        [0,1]
+        [0, 1],
+        [1, 2],
+        [0, 1]
     ];
 
     for (let i = 0; i < inputs.length; i++) {

@@ -6,19 +6,19 @@
  * @param {number} target
  * @return {number[]}
  */
- const twoSum = function(nums, target) {
-    
+const twoSum = function (nums, target) {
+
     const map = {};
-    
+
     for (let i = 0; i < nums.length; i++) {
         const val = nums[i];
         const diff = target - val;
         if (map[diff] != undefined)
             return [map[diff], i];
-                    
+
         map[val] = i;
     }
-    
+
     /* OLD INEFFICIENT IMPLEMENTATION
     let p = 0;
     let next = 0;

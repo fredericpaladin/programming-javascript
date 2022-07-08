@@ -5,9 +5,9 @@ const ListNode = require('./structures/list-node');
 describe('PalindromeLinkedList', function () {
 
     const inputs = [
-        [1,2,2,1],
+        [1, 2, 2, 1],
         [1],
-        [1,2],
+        [1, 2],
         []
     ];
     const outputs = [

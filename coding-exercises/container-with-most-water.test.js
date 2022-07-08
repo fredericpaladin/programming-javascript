@@ -4,8 +4,8 @@ const ContainerWithMostWater = require('./container-with-most-water');
 describe('ContainerWithMostWater', function () {
 
     const inputs = [
-        [1,8,6,2,5,4,8,3,7],
-        [1,1]
+        [1, 8, 6, 2, 5, 4, 8, 3, 7],
+        [1, 1]
     ];
     const outputs = [
         49,

@@ -63,7 +63,7 @@ describe('ValidAnagram', function () {
             });
         }
     });
-    
+
     describe('not valid anagrams', function () {
         const inputs = [
             ['abc', 'def'],

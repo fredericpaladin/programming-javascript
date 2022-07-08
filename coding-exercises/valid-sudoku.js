@@ -72,7 +72,7 @@ const isValidSudoku = function (board) {
             boxes[rBox][cBox].add(value);
         }
     }
-    
+
     return true;
 };
 
