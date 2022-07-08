@@ -4,13 +4,14 @@
   "description": "Coding Exercises",
   "scripts": {
     "test": "mocha './**/*.test.js'",
-    "container-with-most-water": "mocha './container-with-most-water.test.js'",
-    "integer-to-roman": "mocha './integer-to-roman.test.js'",
-    "longest-consecutive-sequence": "mocha './longest-consecutive-sequence.test.js'",
-    "palindrome-linked-list": "mocha './palindrome-linked-list.test.js'",
-    "palindrome-number": "mocha './palindrome-number.test.js'",
-    "reverse-linked-list": "mocha './reverse-linked-list.test.js'",
-    "string-to-integer-atoi": "mocha './string-to-integer-atoi.test.js'"
+    "test-container-with-most-water": "mocha './container-with-most-water.test.js'",
+    "test-integer-to-roman": "mocha './integer-to-roman.test.js'",
+    "test-longest-consecutive-sequence": "mocha './longest-consecutive-sequence.test.js'",
+    "test-palindrome-linked-list": "mocha './palindrome-linked-list.test.js'",
+    "test-palindrome-number": "mocha './palindrome-number.test.js'",
+    "test-reverse-linked-list": "mocha './reverse-linked-list.test.js'",
+    "test-string-to-integer-atoi": "mocha './string-to-integer-atoi.test.js'",
+    "test-valid-sudoku": "mocha './valid-sudoku.test.js'"
   },
   "author": "Frederic Paladin",
   "dependencies": {
