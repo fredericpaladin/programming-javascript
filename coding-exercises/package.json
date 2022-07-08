@@ -11,6 +11,8 @@
     "test-palindrome-number": "mocha './palindrome-number.test.js'",
     "test-reverse-linked-list": "mocha './reverse-linked-list.test.js'",
     "test-string-to-integer-atoi": "mocha './string-to-integer-atoi.test.js'",
+    "test-two-sum": "mocha './two-sum.test.js'",
+    "test-valid-anagram": "mocha './valid-anagram.test.js'",
     "test-valid-sudoku": "mocha './valid-sudoku.test.js'"
   },
   "author": "Frederic Paladin",
