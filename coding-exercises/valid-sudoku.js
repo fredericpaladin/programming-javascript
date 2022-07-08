@@ -25,26 +25,21 @@ const isValidSudoku = function (board) {
 
     const length = board.length;
 
-    // These data structures are used to track
-    // the numbers on the board for each row and column
+    // Track the numbers on the board for each row and column
     let rows = new Array(length);
     let columns = new Array(length);
     for (let i = 0; i < length; i++) {
-        rows[i] = [];
-        columns[i] = [];
+        rows[i] = new Set();
+        columns[i] = new Set();
     }
 
-    // This data structure is used to track
-    // the numbers on the board for each box.
+    // Track the numbers on the board for each box.
     // In this case the keys are only [0..2, 0..2] (3x3)
     let boxes = new Array(length);
     for (let i = 0; i < length / 3; i++) {
         boxes[i] = new Array(length / 3);
         for (let j = 0; j < length / 3; j++) {
-            boxes[i][j] = new Array(length / 3);
-            for (let k = 0; k < length / 3; k++) {
-                boxes[i][j][k] = [];
-            }
+            boxes[i][j] = new Set();
         }
     }
 
@@ -55,26 +50,26 @@ const isValidSudoku = function (board) {
                 continue; // Skip empty cell
             }
 
-            if (columns[c].includes(value)) {
+            if (columns[c].has(value)) {
                 console.log(`Value ${value} was found duplicate in column ${c}: ${JSON.stringify(columns[c])}`);
                 return false;
             }
 
-            if (rows[r].includes(value)) {
+            if (rows[r].has(value)) {
                 console.log(`Value ${value} was found duplicate in row ${r}: ${JSON.stringify(rows[r])}`);
                 return false;
             }
 
             const rBox = Math.floor(r / 3);
             const cBox = Math.floor(c / 3);
-            if (boxes[rBox][cBox].includes(value)) {
+            if (boxes[rBox][cBox].has(value)) {
                 console.log(`Value ${value} was found duplicate in box ${rBox} ${cBox}: ${JSON.stringify(boxes[rBox][cBox])}`);
                 return false;
             }
 
-            columns[c].push(value);
-            rows[r].push(value);
-            boxes[rBox][cBox].push(value);
+            columns[c].add(value);
+            rows[r].add(value);
+            boxes[rBox][cBox].add(value);
         }
     }
     
