@@ -21,7 +21,7 @@ describe('ContainerWithMostWater', function () {
         const expected = outputs[i];
 
         // Assert
-        it(`Test ${i}: maxArea('${input}') should return '${expected}'`, function () {
+        it(`Test ${i}: maxArea(${JSON.stringify(input)}) should return '${expected}'`, function () {
             assert.equal(actual, expected);
         });
     }

@@ -75,8 +75,8 @@ describe('IntegerToRoman', function () {
         const actual = IntegerToRoman.intToRoman(input);
 
         // Assert
-        it(`Test ${i}: intToRoman('${input}') should return '${JSON.stringify(expected)}'`, function () {
-            assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+        it(`Test ${i}: intToRoman('${input}') should return '${expected}'`, function () {
+            assert.equal(actual, expected);
         });
     }
 });

@@ -51,19 +51,19 @@ const isValidSudoku = function (board) {
             }
 
             if (columns[c].has(value)) {
-                console.log(`Value ${value} was found duplicate in column ${c}: ${JSON.stringify(columns[c])}`);
+                // console.log(`Value ${value} was found duplicate in column ${c}: ${JSON.stringify(columns[c])}`);
                 return false;
             }
 
             if (rows[r].has(value)) {
-                console.log(`Value ${value} was found duplicate in row ${r}: ${JSON.stringify(rows[r])}`);
+                // console.log(`Value ${value} was found duplicate in row ${r}: ${JSON.stringify(rows[r])}`);
                 return false;
             }
 
             const rBox = Math.floor(r / 3);
             const cBox = Math.floor(c / 3);
             if (boxes[rBox][cBox].has(value)) {
-                console.log(`Value ${value} was found duplicate in box ${rBox} ${cBox}: ${JSON.stringify(boxes[rBox][cBox])}`);
+                // console.log(`Value ${value} was found duplicate in box ${rBox} ${cBox}: ${JSON.stringify(boxes[rBox][cBox])}`);
                 return false;
             }
 

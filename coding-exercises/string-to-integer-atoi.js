@@ -91,9 +91,6 @@ const myAtoi = function (s) {
         number += char;
     }
 
-    console.log('s', s);
-    console.log('number', number);
-
     if (number.length == 0)
         return 0;
 

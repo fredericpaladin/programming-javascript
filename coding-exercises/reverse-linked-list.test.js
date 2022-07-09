@@ -28,7 +28,7 @@ describe('ReverseLinkedList', function () {
 
         // Assert
         const expected = outputs[i];
-        it(`Test ${i}: reverseList('${input}') should return '${JSON.stringify(expected)}'`, function () {
+        it(`Test ${i}: reverseList(${JSON.stringify(input)}) should return '${JSON.stringify(expected)}'`, function () {
             assert.equal(JSON.stringify(actual), JSON.stringify(expected));
         });
     }

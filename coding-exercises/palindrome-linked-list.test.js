@@ -27,8 +27,8 @@ describe('PalindromeLinkedList', function () {
 
         // Assert
         const expected = outputs[i];
-        it(`Test ${i}: reverseList('${input}') should return '${JSON.stringify(expected)}'`, function () {
-            assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+        it(`Test ${i}: isPalindrome(${JSON.stringify(input)}) should return '${expected}'`, function () {
+            assert.equal(actual, expected);
         });
     }
 });

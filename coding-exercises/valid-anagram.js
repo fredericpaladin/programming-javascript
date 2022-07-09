@@ -12,7 +12,6 @@ const isAnagram = function (s, t) {
 
     // Use the longest string length for the loop
     const length = Math.max(s.length, t.length);
-    console.log('length', length);
     for (let i = 0; i < length; i++) {
 
         if (i < s.length) {

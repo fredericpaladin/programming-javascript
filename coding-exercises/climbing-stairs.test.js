@@ -26,7 +26,7 @@ describe('ClimbingStairs', function () {
 
         // Assert
         it(`Test ${i}: climbStairs(${input}) should return '${JSON.stringify(expected)}'`, function () {
-            assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+            assert.equal(actual, expected);
         });
     }
 });

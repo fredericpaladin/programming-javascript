@@ -24,7 +24,7 @@ describe('LongestPalindromicSubstring', function () {
 
         // Assert
         it(`Test ${i}: longestPalindrome('${input}') should return '${JSON.stringify(expected)}'`, function () {
-            assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+            assert.equal(actual, expected);
         });
     }
 });
