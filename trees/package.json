@@ -5,6 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha './**/*.test.js'",
+    "test-binary-search-tree": "mocha './binary-search-tree.test.js'",
+    "test-binary-tree": "mocha './binary-tree.test.js'",
+    "test-max-heap": "mocha './max-heap.test.js'",
+    "test-min-heap": "mocha './min-heap.test.js'",
+    "test-radix-tree": "mocha './radix-tree.test.js'",
     "test-trie": "mocha './trie.test.js'"
   },
   "author": "Frederic Paladin",
