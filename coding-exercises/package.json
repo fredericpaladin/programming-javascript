@@ -5,10 +5,12 @@
   "scripts": {
     "test": "mocha './**/*.test.js'",
     "test-binary-search": "mocha './binary-search.test.js'",
+    "test-climbing-stairs": "mocha './climbing-stairs.test.js'",
     "test-container-with-most-water": "mocha './container-with-most-water.test.js'",
     "test-integer-to-roman": "mocha './integer-to-roman.test.js'",
     "test-kth-largest-element-in-a-stream": "mocha './kth-largest-element-in-a-stream.test.js'",
     "test-longest-consecutive-sequence": "mocha './longest-consecutive-sequence.test.js'",
+    "test-longest-palindromic-substring": "mocha './longest-palindromic-substring.test.js'",
     "test-palindrome-linked-list": "mocha './palindrome-linked-list.test.js'",
     "test-palindrome-number": "mocha './palindrome-number.test.js'",
     "test-reverse-linked-list": "mocha './reverse-linked-list.test.js'",
