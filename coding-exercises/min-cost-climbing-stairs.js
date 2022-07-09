@@ -1,0 +1,19 @@
+/**
+ * https://leetcode.com/problems/min-cost-climbing-stairs/
+ * https://youtu.be/ktmzAZWkEZ0
+ * 
+ * @param {number[]} cost
+ * @return {number}
+ */
+const minCostClimbingStairs = function (cost) {
+
+    cost.push(0);
+    
+    for (let i = cost.length - 3; i >= 0; i--) {
+        cost[i] += Math.min(cost[i + 1], cost[i + 2]);
+    }
+
+    return Math.min(cost[0], cost[1]);
+};
+
+module.exports.minCostClimbingStairs = minCostClimbingStairs;
