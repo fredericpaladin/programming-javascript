@@ -12,6 +12,7 @@
     "test-longest-consecutive-sequence": "mocha './longest-consecutive-sequence.test.js'",
     "test-longest-palindromic-substring": "mocha './longest-palindromic-substring.test.js'",
     "test-longest-substring-without-repeating-characters": "mocha './longest-substring-without-repeating-characters.test.js'",
+    "test-maximum-depth-of-binary-tree": "mocha './maximum-depth-of-binary-tree.test.js'",
     "test-merge-two-sorted-lists": "mocha './merge-two-sorted-lists.test.js'",
     "test-min-cost-climbing-stairs": "mocha './min-cost-climbing-stairs.test.js'",
     "test-palindrome-linked-list": "mocha './palindrome-linked-list.test.js'",
