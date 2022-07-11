@@ -17,6 +17,8 @@
     "test-min-cost-climbing-stairs": "mocha './min-cost-climbing-stairs.test.js'",
     "test-palindrome-linked-list": "mocha './palindrome-linked-list.test.js'",
     "test-palindrome-number": "mocha './palindrome-number.test.js'",
+    "test-plus-one": "mocha './plus-one.test.js'",
+    "test-remove-k-digits": "mocha './remove-k-digits.test.js'",
     "test-reverse-linked-list": "mocha './reverse-linked-list.test.js'",
     "test-string-to-integer-atoi": "mocha './string-to-integer-atoi.test.js'",
     "test-trapping-rain-water": "mocha './trapping-rain-water.test.js'",
