@@ -1,7 +1,7 @@
 const assert = require('assert');
-const quicksort = require('./quicksort');
+const insertion = require('./insertion');
 
-describe('Quicksort', function () {
+describe('Insertion', function () {
     describe('sort() unique values', function () {
 
         // Arrange
@@ -31,7 +31,7 @@ describe('Quicksort', function () {
         ];
 
         // Act
-        quicksort.sort(array);
+        insertion.sort(array);
 
         // Assert 
         it('array should be sorted', function () {
@@ -58,7 +58,7 @@ describe('Quicksort', function () {
         ];
 
         // Act
-        quicksort.sort(array);
+        insertion.sort(array);
 
         // Assert 
         it('array should be sorted', function () {
@@ -73,7 +73,7 @@ describe('Quicksort', function () {
         const expected = [33];
 
         // Act
-        quicksort.sort(array);
+        insertion.sort(array);
 
         // Assert 
         it('array should be sorted', function () {
@@ -110,7 +110,7 @@ describe('Quicksort', function () {
         ];
 
         // Act
-        quicksort.sort(array);
+        insertion.sort(array);
 
         // Assert 
         it('array should be sorted', function () {
@@ -125,7 +125,7 @@ describe('Quicksort', function () {
         const expected = [];
 
         // Act
-        quicksort.sort(array);
+        insertion.sort(array);
 
         // Assert 
         it('array should be sorted', function () {

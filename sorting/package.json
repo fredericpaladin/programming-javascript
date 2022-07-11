@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Sorting",
   "scripts": {
-    "test": "mocha './**/*.test.js'"
+    "test": "mocha './**/*.test.js'",
+    "test-bubble-sort": "mocha './bubble-sort.test.js'",
+    "test-insertion": "mocha './insertion.test.js'",
+    "test-merge-sort": "mocha './merge-sort.test.js'",
+    "test-quicksort": "mocha './quicksort.test.js'"
   },
   "author": "Frederic Paladin",
   "dependencies": {

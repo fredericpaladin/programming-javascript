@@ -1,5 +1,12 @@
 /**
  * Sort an array using the quicksort algorithm.
+ * 
+ * Time Complexity  (best):     O(n log(n))
+ * Time Complexity  (average):  O(n log(n))
+ * Time Complexity  (wors):     O(n^2)
+ * 
+ * Space Complexity (worst):    O(log(n))
+ * 
  * @param {*} array 
  * @returns 
  */
