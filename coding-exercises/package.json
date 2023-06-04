@@ -20,6 +20,7 @@
     "test-plus-one": "mocha './plus-one.test.js'",
     "test-remove-k-digits": "mocha './remove-k-digits.test.js'",
     "test-reverse-linked-list": "mocha './reverse-linked-list.test.js'",
+    "test-second-largest-digit-in-a-string": "mocha './second-largest-digit-in-a-string.test.js'",
     "test-string-to-integer-atoi": "mocha './string-to-integer-atoi.test.js'",
     "test-trapping-rain-water": "mocha './trapping-rain-water.test.js'",
     "test-two-sum": "mocha './two-sum.test.js'",
